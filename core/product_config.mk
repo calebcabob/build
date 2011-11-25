@@ -175,18 +175,24 @@ include $(BUILD_SYSTEM)/node_fns.mk
 include $(BUILD_SYSTEM)/product.mk
 include $(BUILD_SYSTEM)/device.mk
 
-ifneq ($(strip $(TARGET_BUILD_APPS)),)
-# An unbundled app build needs only the core product makefiles.
-all_product_configs := $(call get-product-makefiles,\
-    $(SRC_TARGET_DIR)/product/AndroidProducts.mk)
-else
-# Read in all of the product definitions specified by the AndroidProducts.mk
-# files in the tree.
-all_product_configs := $(get-all-product-makefiles)
+# An AquariOS build needs only the CUSTOM product makefiles.
+ifneq ($(CUSTOM_BUILD),)
+  all_product_configs := $(shell ls vendor/aquarios/products/$(CUSTOM_BUILD).mk)
+	else
+	  ifneq ($(strip $(TARGET_BUILD_APPS)),)
+	  # An unbundled app build needs only the core product makefiles.
+	  all_product_configs := $(call get-product-makefiles,\
+		  $(SRC_TARGET_DIR)/product/AndroidProducts.mk)
+	else
+	  # Read in all of the product definitions specified by the AndroidProducts.mk
+	  # files in the tree.
+	  all_product_configs := $(get-all-product-makefiles)
+	endif
 endif
 
 all_named_products :=
 
+ifeq ($(CUSTOM_BUILD),)
 # Find the product config makefile for the current product.
 # all_product_configs consists items like:
 # <product_name>:<path_to_the_product_makefile>
@@ -207,9 +213,14 @@ $(foreach f, $(all_product_configs),\
         $(eval all_named_products += $(basename $(notdir $(f))))\
         $(if $(filter $(TARGET_PRODUCT),$(basename $(notdir $(f)))),\
             $(eval current_product_makefile += $(f)),)))
+
 _cpm_words :=
 _cpm_word1 :=
 _cpm_word2 :=
+else
+    current_product_makefile := $(strip $(all_product_configs))
+    all_product_makefiles := $(strip $(all_product_configs))
+endif
 current_product_makefile := $(strip $(current_product_makefile))
 all_product_makefiles := $(strip $(all_product_makefiles))
 
