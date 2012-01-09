@@ -1290,12 +1290,12 @@ endef
 ifneq (,$(filter 1 true,$(WITH_TIDY_ONLY)))
 define transform-c-to-o
 $(if $(PRIVATE_TIDY_CHECKS),
-  @echo "$($(PRIVATE_PREFIX)DISPLAY) tidy $(PRIVATE_ARM_MODE) C: $<"
+  @echo ${CL_PFX}"$($(PRIVATE_PREFIX)DISPLAY) tidy $(PRIVATE_ARM_MODE) C:"${CL_RST}" $<"
   $(clang-tidy-c))
 endef
 else
 define transform-c-to-o
-@echo "$($(PRIVATE_PREFIX)DISPLAY) $(PRIVATE_ARM_MODE) C: $(PRIVATE_MODULE) <= $<"
+@echo ${CL_PFX}"$($(PRIVATE_PREFIX)DISPLAY) $(PRIVATE_ARM_MODE) C:"${CL_RST}" $(PRIVATE_MODULE) <= $<"
 @mkdir -p $(dir $@)
 $(if $(PRIVATE_TIDY_CHECKS),$(clang-tidy-c))
 $(hide) $(RELATIVE_PWD) $(PRIVATE_CC) \
@@ -1305,7 +1305,7 @@ endef
 endif
 
 define transform-s-to-o
-@echo "$($(PRIVATE_PREFIX)DISPLAY) asm: $(PRIVATE_MODULE) <= $<"
+@echo ${CL_PFX}"$($(PRIVATE_PREFIX)DISPLAY) asm:"${CL_RST}" $(PRIVATE_MODULE) <= $<"
 @mkdir -p $(dir $@)
 $(RELATIVE_PWD) $(PRIVATE_CC) \
   $(call transform-c-or-s-to-o-compiler-args, $(PRIVATE_ASFLAGS)) \
@@ -1329,7 +1329,7 @@ endef
 ###########################################################
 
 define transform-m-to-o
-@echo "$($(PRIVATE_PREFIX)DISPLAY) ObjC: $(PRIVATE_MODULE) <= $<"
+@echo ${CL_PFX}"$($(PRIVATE_PREFIX)DISPLAY) ObjC:"${CL_RST}" $(PRIVATE_MODULE) <= $<"
 $(call transform-c-or-s-to-o, $(PRIVATE_CFLAGS) $(PRIVATE_DEBUG_CFLAGS))
 endef
 
@@ -2258,7 +2258,7 @@ $(if $(PRIVATE_EXTRA_JAR_ARGS),$(call add-java-resources-to,$@))
 endef
 
 define transform-java-to-classes.jar
-@echo "$($(PRIVATE_PREFIX)DISPLAY) Java: $(PRIVATE_MODULE) ($(PRIVATE_CLASS_INTERMEDIATES_DIR))"
+@echo -e ${CL_PFX}"$($(PRIVATE_PREFIX)DISPLAY) Java:"${CL_RST}" $(PRIVATE_MODULE) ($(PRIVATE_CLASS_INTERMEDIATES_DIR))"
 $(call compile-java,$(TARGET_JAVAC),$(PRIVATE_BOOTCLASSPATH))
 endef
 
@@ -2913,7 +2913,7 @@ endef
 ###########################################################
 
 define transform-generated-source
-@echo "$($(PRIVATE_PREFIX)DISPLAY) Generated: $(PRIVATE_MODULE) <= $<"
+@echo -e ${CL_PFX}"$($(PRIVATE_PREFIX)DISPLAY) Generated:"${CL_RST}" $(PRIVATE_MODULE) <= $<"
 @mkdir -p $(dir $@)
 $(hide) $(PRIVATE_CUSTOM_TOOL)
 endef
