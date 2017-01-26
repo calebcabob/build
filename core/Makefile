@@ -2009,55 +2009,57 @@ bacon: otapackage
 
 	@echo -e ""
 	@echo -e ""
-	@echo -e "                                   oo                          "
-	@echo -e "                                oooo                           "
-	@echo -e "                          oooooooooooo                         "
-	@echo -e "                          oooooooooooooooooo                   "
-	@echo -e "                      oooooooooooooooooooooo                   "
-	@echo -e "                      ooooooooooooooooooooooo                  "
-	@echo -e "                     oooooooooooooooooooooooo                  "
-	@echo -e "                   ooooooooooooooooooooooooooo                 "
-	@echo -e "                      ooooooooooooooooooooooooo                "
-	@echo -e "                    ooooooooooooooooooooooooooooo              "
-	@echo -e "                   oooooooooooooooooooooooooooooooo            "
-	@echo -e "                 oooooooooooooooooo ooooooooooooooooo          "
-	@echo -e "                 ooooooooooooooooooo  ooo  oooooooooooo        "
-	@echo -e "                 oooooooooooooooooooooo          ooooo         "
-	@echo -e "                 ooooooooooooooooooooooooo                     "
-	@echo -e "                  ooooooooooooooooooooooooooo                  "
-	@echo -e "                   oooooooooooooooooooooooooooo                "
-	@echo -e "                    oooooooooooooooooooooooooooo               "
-	@echo -e "                   o  ooooooooooooooooooooooooooo              "
-	@echo -e "         oo      oooo   oooooooooooooooooooooooooo             "
-	@echo -e "          ooooooooooo   oooooooooooooooooooooooooo             "
-	@echo -e "           ooooooooooooooooooooooooooooooooooooooo             "
-	@echo -e "           oooooooooooooooooooooooooooooooooooooo              "
-	@echo -e "       ooooooooooooooooooooooooooooooooooooooooo               "
-	@echo -e "           oooooooooooooooooooooooooooooooooooo                "
-	@echo -e "          ooooooooooooooooooooooooooooooooooo                  "
-	@echo -e "       ooooooooooooooooooooooooooooooooooo                     "
-	@echo -e "            ooooooooooooooooooooooooooo                        "
-	@echo -e "          oooooooooooooooooooooooooo                           "
-	@echo -e "                 ooooooooooooooo                               "
-	@echo -e "                ooooooooooooooo                                "
-	@echo -e "                oooooooooooooo                                 "
-	@echo -e "                oooooooooooooo         ooooooooo               "
-	@echo -e "                oooooooooooooo       ooooooooooooo             "
-	@echo -e "                ooooooooooooooo     ooooo  ooooooo             "
-	@echo -e "                 oooooooooooooo     ooo      oooooo            "
-	@echo -e "                  oooooooooooooo    oo       oooooo            "
-	@echo -e "                    ooooooooooooooo  o     ooooooo             "
-	@echo -e "                     oooooooooooooooooooooooooooo              "
-	@echo -e "                        oooooooooooooooooooooooo               "
-	@echo -e "                           oooooooooooooooooooo                "
-	@echo -e "                                ooooooooooo                    "
+	@echo -e ${CL_CYN}"                                   oo                          "${CL_RST}
+	@echo -e ${CL_CYN}"                                oooo                           "${CL_RST}
+	@echo -e ${CL_CYN}"                          oooooooooooo                         "${CL_RST}
+	@echo -e ${CL_CYN}"                          oooooooooooooooooo                   "${CL_RST}
+	@echo -e ${CL_CYN}"                      oooooooooooooooooooooo                   "${CL_RST}
+	@echo -e ${CL_CYN}"                      ooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${CL_CYN}"                     oooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${CL_CYN}"                   ooooooooooooooooooooooooooo                 "${CL_RST}
+	@echo -e ${CL_CYN}"                      ooooooooooooooooooooooooo                "${CL_RST}
+	@echo -e ${CL_CYN}"                    ooooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${CL_CYN}"                   oooooooooooooooooooooooooooooooo            "${CL_RST}
+	@echo -e ${CL_CYN}"                 oooooooooooooooooo ooooooooooooooooo          "${CL_RST}
+	@echo -e ${CL_CYN}"                 ooooooooooooooooooo  ooo  oooooooooooo        "${CL_RST}
+	@echo -e ${CL_CYN}"                 oooooooooooooooooooooo          ooooo         "${CL_RST}
+	@echo -e ${CL_CYN}"                 ooooooooooooooooooooooooo                     "${CL_RST}
+	@echo -e ${CL_CYN}"                  ooooooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${CL_CYN}"                   oooooooooooooooooooooooooooo                "${CL_RST}
+	@echo -e ${CL_CYN}"                    oooooooooooooooooooooooooooo               "${CL_RST}
+	@echo -e ${CL_CYN}"                   o  ooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${CL_CYN}"         oo      oooo   oooooooooooooooooooooooooo             "${CL_RST}
+	@echo -e ${CL_CYN}"          ooooooooooo   oooooooooooooooooooooooooo             "${CL_RST}
+	@echo -e ${CL_CYN}"           ooooooooooooooooooooooooooooooooooooooo             "${CL_RST}
+	@echo -e ${CL_CYN}"           oooooooooooooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${CL_CYN}"       ooooooooooooooooooooooooooooooooooooooooo               "${CL_RST}
+	@echo -e ${CL_CYN}"           oooooooooooooooooooooooooooooooooooo                "${CL_RST}
+	@echo -e ${CL_CYN}"          ooooooooooooooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${CL_CYN}"       ooooooooooooooooooooooooooooooooooo                     "${CL_RST}
+	@echo -e ${CL_CYN}"            ooooooooooooooooooooooooooo                        "${CL_RST}
+	@echo -e ${CL_CYN}"          oooooooooooooooooooooooooo                           "${CL_RST}
+	@echo -e ${CL_CYN}"                 ooooooooooooooo                               "${CL_RST}
+	@echo -e ${CL_CYN}"                ooooooooooooooo                                "${CL_RST}
+	@echo -e ${CL_CYN}"                oooooooooooooo                                 "${CL_RST}
+	@echo -e ${CL_CYN}"                oooooooooooooo         ooooooooo               "${CL_RST}
+	@echo -e ${CL_CYN}"                oooooooooooooo       ooooooooooooo             "${CL_RST}
+	@echo -e ${CL_CYN}"                ooooooooooooooo     ooooo  ooooooo             "${CL_RST}
+	@echo -e ${CL_CYN}"                 oooooooooooooo     ooo      oooooo            "${CL_RST}
+	@echo -e ${CL_CYN}"                  oooooooooooooo    oo       oooooo            "${CL_RST}
+	@echo -e ${CL_CYN}"                    ooooooooooooooo  o     ooooooo             "${CL_RST}
+	@echo -e ${CL_CYN}"                     oooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${CL_CYN}"                        oooooooooooooooooooooooo               "${CL_RST}
+	@echo -e ${CL_CYN}"                           oooooooooooooooooooo                "${CL_RST}
+	@echo -e ${CL_CYN}"                                ooooooooooo                    "${CL_RST}
 	@echo -e ""
-	@echo -e ""
+	@echo -e ""${CL_RST}
+	@echo -e ${CL_BMG}"             Hooray! You haven't FUCKED IT UP...so far.          "${CL_RST}
 	@echo -e ""
 	@echo -e "ZIP: $(CUSTOM_TARGET_PACKAGE)"
 	@echo -e "SIZE: "`ls -hal $(CUSTOM_TARGET_PACKAGE) | cut -d ' ' -f 5` "
 	@echo -e "MD5: "`cat $(CUSTOM_TARGET_PACKAGE).md5sum | cut -d ' ' -f 1` "
 	@echo -e ""
+
 
 endif    # build_ota_package
 
