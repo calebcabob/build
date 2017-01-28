@@ -15,11 +15,23 @@ ifneq ($(BUILD_WITH_COLORS),0)
   CL_MAG="\033[35m"
   CL_CYN="\033[36m"
   CL_RST="\033[0m"
-endif
 
 ### Light/bold colors ###
+#red
+  CL_BRD="\033[1;31m"
+#green
+  CL_BGN="\033[1;32m"
+#yellow
+  CL_BYW="\033[1;33m"
+#blue
+  CL_BBL="\033[1;34m"
+#magenta
+  CL_BMG="\033[1;35m"
 #cyan
   CL_BCY="\033[1;36m"
+#white
+  CL_BWT="\033[1;37m"
+endif
 
 #Fancy finish logo colors
 eeeeee="\033[38;5;255m"
