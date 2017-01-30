@@ -2008,6 +2008,8 @@ bacon: otapackage
 	$(hide) $(MD5SUM) $(CUSTOM_TARGET_PACKAGE) > $(CUSTOM_TARGET_PACKAGE).md5sum
 
 	@echo -e ""
+	@echo -e ${CL_BMG}"                    Welcome to the age of AquariOS             "${CL_RST}
+	@echo -e ""
 	@echo -e ""
 	@echo -e ${CL_CYN}"                                   oo                          "${CL_RST}
 	@echo -e ${CL_CYN}"                                oooo                           "${CL_RST}
@@ -2055,9 +2057,9 @@ bacon: otapackage
 	@echo -e ""${CL_RST}
 	@echo -e ${CL_BMG}"             Hooray! You haven't FUCKED IT UP...so far.          "${CL_RST}
 	@echo -e ""
-	@echo -e "ZIP: $(CUSTOM_TARGET_PACKAGE)"
-	@echo -e "SIZE: "`ls -hal $(CUSTOM_TARGET_PACKAGE) | cut -d ' ' -f 5` "
-	@echo -e "MD5: "`cat $(CUSTOM_TARGET_PACKAGE).md5sum | cut -d ' ' -f 1` "
+	@echo -e ${CL_MAG}"zip: "${CL_CYN} $(CUSTOM_TARGET_PACKAGE)${CL_RST}
+	@echo -e ${CL_MAG}"md5: "${CL_CYN}" `cat $(CUSTOM_TARGET_PACKAGE).md5sum | cut -d ' ' -f 1`"${CL_RST}
+	@echo -e ${CL_MAG}"size:"${CL_CYN}" `ls -lah $(CUSTOM_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
 	@echo -e ""
 
 
