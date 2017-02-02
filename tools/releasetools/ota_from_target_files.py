@@ -709,19 +709,18 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   system_progress = 0.75
 
-  script.Print("                    _____________________ ")
-  script.Print("                   /    www.slimroms.org |")
-  script.Print("                  /                      |")
-  script.Print("                 /    ___________________|")
-  script.Print("                /    /    ___             ")
-  script.Print("               /    / ___/   \            ")
-  script.Print("              /    / /   \___/____   ____ ")
-  script.Print("             /    /  |   |___/    \_/    |")
-  script.Print(" ___________/    /   |   |   |           |")
-  script.Print("|               /    |   |   |   |   |   |")
-  script.Print("|              /     |   |   |   |   |   |")
-  script.Print("|_____________/      \___^___^___^___^___/")
-  script.Print(" ")
+  script.Print("")
+  script.Print("_______                            ____________________")
+  script.Print("___    |_____ ____  _______ __________(_)_  __ \_  ___/")
+  script.Print("__  /| |  __ `/  / / /  __ `/_  ___/_  /_  / / /____ \ ")
+  script.Print("_  ___ / /_/ // /_/ // /_/ /_  /   _  / / /_/ /____/ / ")
+  script.Print("/_/  |_\__, / \__,_/ \__,_/ /_/    /_/  \____/ /____/  ")
+  script.Print("         /_/                                           ")
+  script.Print("")
+  script.Print("")
+  script.Print("")
+  script.Print("")
+  script.Print("")
 
   if OPTIONS.wipe_user_data:
     system_progress -= 0.1
@@ -853,7 +852,7 @@ endif;
   common.ZipWriteStr(output_zip, "system/build.prop",
                      ""+input_zip.read("SYSTEM/build.prop"))
 
-  common.ZipWriteStr(output_zip, "META-INF/org/slimroms/releasekey",
+  common.ZipWriteStr(output_zip, "META-INF/org/aquariosroms/releasekey",
                      ""+input_zip.read("META/releasekey.txt"))
 
 def WritePolicyConfig(file_name, output_zip):

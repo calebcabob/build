@@ -1,11 +1,34 @@
 # Put some miscellaneous rules here
 
 # Build system colors
-
 ifneq ($(BUILD_WITH_COLORS),0)
-  CL_SLIM="\033[38;5;24m"
+  CL_AQUARIOS="\033[38;5;24m"
   CL_SGRY="\033[38;5;239m"
+  CL_PFX="\033[33m"
+  CL_INS="\033[36m"
+  CL_RED="\033[31m"
+  CL_GRN="\033[32m"
+  CL_YLW="\033[33m"
+  CL_BLU="\033[34m"
+  CL_MAG="\033[35m"
+  CL_CYN="\033[36m"
   CL_RST="\033[0m"
+
+# Light/Bold colors
+#red
+  CL_BRD="\033[1;31m"
+#green
+  CL_BGN="\033[1;32m"
+#yellow
+  CL_BYW="\033[1;33m"
+#blue
+  CL_BBL="\033[1;34m"
+#magenta
+  CL_BMG="\033[1;35m"
+#cyan
+  CL_BCY="\033[1;36m"
+#white
+  CL_BWT="\033[1;37m"
 endif
 
 # HACK: clear LOCAL_PATH from including last build target before calling
@@ -240,7 +263,7 @@ endif
 	$(hide) TARGET_BUILD_TYPE="$(TARGET_BUILD_VARIANT)" \
 			TARGET_BUILD_FLAVOR="$(TARGET_BUILD_FLAVOR)" \
 			TARGET_DEVICE="$(TARGET_VENDOR_DEVICE_NAME)" \
-			SLIM_DEVICE="$(TARGET_DEVICE)" \
+			AQUARIOS_DEVICE="$(TARGET_DEVICE)" \
 			PRODUCT_NAME="$(TARGET_VENDOR_PRODUCT_NAME)" \
 			PRODUCT_BRAND="$(PRODUCT_BRAND)" \
 			PRODUCT_DEFAULT_LOCALE="$(call get-default-product-locale,$(PRODUCT_LOCALES))" \
@@ -2217,7 +2240,7 @@ endif
 ifeq ($(WITH_GMS),true)
     $(INTERNAL_OTA_PACKAGE_TARGET): backuptool := false
 else
-ifneq ($(SLIM_BUILD),)
+ifneq ($(AQUARIOS_BUILD),)
     $(INTERNAL_OTA_PACKAGE_TARGET): backuptool := true
 else
     $(INTERNAL_OTA_PACKAGE_TARGET): backuptool := false
@@ -2253,27 +2276,64 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE)
 	   $(if $(OEM_OTA_CONFIG), -o $(OEM_OTA_CONFIG)) \
 	   $(BUILT_TARGET_FILES_PACKAGE) $@
 
-SLIM_TARGET_PACKAGE := $(PRODUCT_OUT)/$(SLIM_MOD_VERSION).zip
+AQUARIOS_TARGET_PACKAGE := $(PRODUCT_OUT)/$(AQUARIOS_MOD_VERSION).zip
 
 .PHONY: otapackage bacon
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(SLIM_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(SLIM_TARGET_PACKAGE) > $(SLIM_TARGET_PACKAGE).md5sum
-	@echo -e " "
-	@echo -e ${CL_SLIM}" "${CL_SLIM}
-	@echo -e ${CL_SLIM}"                              _______________________________________________  "${CL_SLIM}
-	@echo -e ${CL_SLIM}"                             /                                  slimroms.org | "${CL_SLIM}
-	@echo -e ${CL_SLIM}"                            /   _____________________________________________| "${CL_SLIM}
-	@echo -e ${CL_SLIM}"                           /   /                                               "${CL_SLIM}
-	@echo -e ${CL_SLIM}"                          /   /  _  _      "${CL_SGRY}" ______                             "${CL_SLIM}
-	@echo -e ${CL_SLIM}"                         /   /  | |(_)     "${CL_SGRY}"(_____ \                            "${CL_SLIM}
-	@echo -e ${CL_SLIM}"                        /   /   | | _ _____ "${CL_SGRY}"_____) )___  _____  ___            "${CL_SLIM}
-	@echo -e ${CL_SLIM}"  _____________________/   /    | || |     |"${CL_SGRY}"  __  // _ \|     |/___)           "${CL_SLIM}
-	@echo -e ${CL_SLIM}" |                        /     | || | | | |"${CL_SGRY}" |  \ \ |_| | | | |___ |           "${CL_SLIM}
-	@echo -e ${CL_SLIM}" |_______________________/       \_)_|_|_|_|"${CL_SGRY}"_|   |_\___/|_|_|_(___/            "${CL_SLIM}
-	@echo -e ${CL_SLIM}" "${CL_SLIM}
-	@echo -e ${CL_CYN}"Package Complete: $(SLIM_TARGET_PACKAGE)"${CL_RST}
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(AQUARIOS_TARGET_PACKAGE)
+	$(hide) $(MD5SUM) $(AQUARIOS_TARGET_PACKAGE) > $(AQUARIOS_TARGET_PACKAGE).md5sum
+	@echo -e ""
+	@echo -e ${CL_BMG}"                    Welcome to the age of AquariOS             "${CL_RST}
+	@echo -e ""
+	@echo -e ""
+	@echo -e ${CL_CYN}"                                   oo                          "${CL_RST}
+	@echo -e ${CL_CYN}"                                oooo                           "${CL_RST}
+	@echo -e ${CL_CYN}"                          oooooooooooo                         "${CL_RST}
+	@echo -e ${CL_CYN}"                          oooooooooooooooooo                   "${CL_RST}
+	@echo -e ${CL_CYN}"                      oooooooooooooooooooooo                   "${CL_RST}
+	@echo -e ${CL_CYN}"                      ooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${CL_CYN}"                     oooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${CL_CYN}"                   ooooooooooooooooooooooooooo                 "${CL_RST}
+	@echo -e ${CL_CYN}"                      ooooooooooooooooooooooooo                "${CL_RST}
+	@echo -e ${CL_CYN}"                    ooooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${CL_CYN}"                   oooooooooooooooooooooooooooooooo            "${CL_RST}
+	@echo -e ${CL_CYN}"                 oooooooooooooooooo ooooooooooooooooo          "${CL_RST}
+	@echo -e ${CL_CYN}"                 ooooooooooooooooooo  ooo  oooooooooooo        "${CL_RST}
+	@echo -e ${CL_CYN}"                 oooooooooooooooooooooo          ooooo         "${CL_RST}
+	@echo -e ${CL_CYN}"                 ooooooooooooooooooooooooo                     "${CL_RST}
+	@echo -e ${CL_CYN}"                  ooooooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${CL_CYN}"                   oooooooooooooooooooooooooooo                "${CL_RST}
+	@echo -e ${CL_CYN}"                    oooooooooooooooooooooooooooo               "${CL_RST}
+	@echo -e ${CL_CYN}"                   o  ooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${CL_CYN}"         oo      oooo   oooooooooooooooooooooooooo             "${CL_RST}
+	@echo -e ${CL_CYN}"          ooooooooooo   oooooooooooooooooooooooooo             "${CL_RST}
+	@echo -e ${CL_CYN}"           ooooooooooooooooooooooooooooooooooooooo             "${CL_RST}
+	@echo -e ${CL_CYN}"           oooooooooooooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${CL_CYN}"       ooooooooooooooooooooooooooooooooooooooooo               "${CL_RST}
+	@echo -e ${CL_CYN}"           oooooooooooooooooooooooooooooooooooo                "${CL_RST}
+	@echo -e ${CL_CYN}"          ooooooooooooooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${CL_CYN}"       ooooooooooooooooooooooooooooooooooo                     "${CL_RST}
+	@echo -e ${CL_CYN}"            ooooooooooooooooooooooooooo                        "${CL_RST}
+	@echo -e ${CL_CYN}"          oooooooooooooooooooooooooo                           "${CL_RST}
+	@echo -e ${CL_CYN}"                 ooooooooooooooo                               "${CL_RST}
+	@echo -e ${CL_CYN}"                ooooooooooooooo                                "${CL_RST}
+	@echo -e ${CL_CYN}"                oooooooooooooo                                 "${CL_RST}
+	@echo -e ${CL_CYN}"                oooooooooooooo         ooooooooo               "${CL_RST}
+	@echo -e ${CL_CYN}"                oooooooooooooo       ooooooooooooo             "${CL_RST}
+	@echo -e ${CL_CYN}"                ooooooooooooooo     ooooo  ooooooo             "${CL_RST}
+	@echo -e ${CL_CYN}"                 oooooooooooooo     ooo      oooooo            "${CL_RST}
+	@echo -e ${CL_CYN}"                  oooooooooooooo    oo       oooooo            "${CL_RST}
+	@echo -e ${CL_CYN}"                    ooooooooooooooo  o     ooooooo             "${CL_RST}
+	@echo -e ${CL_CYN}"                     oooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${CL_CYN}"                        oooooooooooooooooooooooo               "${CL_RST}
+	@echo -e ${CL_CYN}"                           oooooooooooooooooooo                "${CL_RST}
+	@echo -e ${CL_CYN}"                                ooooooooooo                    "${CL_RST}
+	@echo -e ""
+	@echo -e ""${CL_RST}
+	@echo -e ${CL_BMG}"             Hooray! You haven't FUCKED IT UP...so far.          "${CL_RST}
+	@echo -e ""
+	@echo -e ${CL_CYN}"Package Complete: $(AQUARIOS_TARGET_PACKAGE)"${CL_RST}
 
 endif    # build_ota_package
 # -----------------------------------------------------------------
