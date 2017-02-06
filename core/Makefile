@@ -2057,9 +2057,8 @@ bacon: otapackage
 	@echo -e ""${CL_RST}
 	@echo -e ${CL_BMG}"             Hooray! You haven't FUCKED IT UP...so far.          "${CL_RST}
 	@echo -e ""
-	@echo -e ${CL_MAG}"zip: "${CL_CYN} $(CUSTOM_TARGET_PACKAGE)${CL_RST}
-	@echo -e ${CL_MAG}"md5: "${CL_CYN}" `cat $(CUSTOM_TARGET_PACKAGE).md5sum | cut -d ' ' -f 1`"${CL_RST}
-	@echo -e ${CL_MAG}"size:"${CL_CYN}" `ls -lah $(CUSTOM_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
+	@echo -e "NAME:"${CL_CYN} $(CUSTOM_TARGET_PACKAGE)${CL_RST}
+	@echo -e "SIZE:"${CL_CYN}" `ls -lah $(CUSTOM_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
 	@echo -e ""
 
 
