@@ -1972,7 +1972,60 @@ otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CUSTOM_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(CUSTOM_TARGET_PACKAGE) > $(CUSTOM_TARGET_PACKAGE).md5sum
-	@echo "Package Complete: $(CUSTOM_TARGET_PACKAGE)"
+
+	@echo -e ""
+	@echo -e ""
+	@echo -e ""
+	@echo -e ${CL_CYN}"                                   oo                          "${CL_RST}
+	@echo -e ${CL_CYN}"                                oooo                           "${CL_RST}
+	@echo -e ${CL_CYN}"                          oooooooooooo                         "${CL_RST}
+	@echo -e ${CL_CYN}"                          oooooooooooooooooo                   "${CL_RST}
+	@echo -e ${CL_CYN}"                      oooooooooooooooooooooo                   "${CL_RST}
+	@echo -e ${CL_CYN}"                      ooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${CL_CYN}"                     oooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${CL_CYN}"                   ooooooooooooooooooooooooooo                 "${CL_RST}
+	@echo -e ${CL_CYN}"                      ooooooooooooooooooooooooo                "${CL_RST}
+	@echo -e ${CL_CYN}"                    ooooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${CL_CYN}"                   oooooooooooooooooooooooooooooooo            "${CL_RST}
+	@echo -e ${CL_CYN}"                 oooooooooooooooooo ooooooooooooooooo          "${CL_RST}
+	@echo -e ${CL_CYN}"                 ooooooooooooooooooo  ooo  oooooooooooo        "${CL_RST}
+	@echo -e ${CL_CYN}"                 oooooooooooooooooooooo          ooooo         "${CL_RST}
+	@echo -e ${CL_CYN}"                 ooooooooooooooooooooooooo                     "${CL_RST}
+	@echo -e ${CL_CYN}"                  ooooooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${CL_CYN}"                   oooooooooooooooooooooooooooo                "${CL_RST}
+	@echo -e ${CL_CYN}"                    oooooooooooooooooooooooooooo               "${CL_RST}
+	@echo -e ${CL_CYN}"                   o  ooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${CL_CYN}"         oo      oooo   oooooooooooooooooooooooooo             "${CL_RST}
+	@echo -e ${CL_CYN}"          ooooooooooo   oooooooooooooooooooooooooo             "${CL_RST}
+	@echo -e ${CL_CYN}"           ooooooooooooooooooooooooooooooooooooooo             "${CL_RST}
+	@echo -e ${CL_CYN}"           oooooooooooooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${CL_CYN}"       ooooooooooooooooooooooooooooooooooooooooo               "${CL_RST}
+	@echo -e ${CL_CYN}"           oooooooooooooooooooooooooooooooooooo                "${CL_RST}
+	@echo -e ${CL_CYN}"          ooooooooooooooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${CL_CYN}"       ooooooooooooooooooooooooooooooooooo                     "${CL_RST}
+	@echo -e ${CL_CYN}"            ooooooooooooooooooooooooooo                        "${CL_RST}
+	@echo -e ${CL_CYN}"          oooooooooooooooooooooooooo                           "${CL_RST}
+	@echo -e ${CL_CYN}"                 ooooooooooooooo                               "${CL_RST}
+	@echo -e ${CL_CYN}"                ooooooooooooooo                                "${CL_RST}
+	@echo -e ${CL_CYN}"                oooooooooooooo                                 "${CL_RST}
+	@echo -e ${CL_CYN}"                oooooooooooooo         ooooooooo               "${CL_RST}
+	@echo -e ${CL_CYN}"                oooooooooooooo       ooooooooooooo             "${CL_RST}
+	@echo -e ${CL_CYN}"                ooooooooooooooo     ooooo  ooooooo             "${CL_RST}
+	@echo -e ${CL_CYN}"                 oooooooooooooo     ooo      oooooo            "${CL_RST}
+	@echo -e ${CL_CYN}"                  oooooooooooooo    oo       oooooo            "${CL_RST}
+	@echo -e ${CL_CYN}"                    ooooooooooooooo  o     ooooooo             "${CL_RST}
+	@echo -e ${CL_CYN}"                     oooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${CL_CYN}"                        oooooooooooooooooooooooo               "${CL_RST}
+	@echo -e ${CL_CYN}"                           oooooooooooooooooooo                "${CL_RST}
+	@echo -e ${CL_CYN}"                                ooooooooooo                    "${CL_RST}
+	@echo -e ""
+	@echo -e ""${CL_RST}
+	@echo -e ${CL_BMG}"                    Welcome to the age of AquariOS             "${CL_RST}
+	@echo -e ""
+	@echo -e "NAME:"${CL_CYN} $(CUSTOM_TARGET_PACKAGE)${CL_RST}
+	@echo -e "SIZE:"${CL_CYN}" `ls -lah $(CUSTOM_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
+	@echo -e ""
+
 
 endif    # build_ota_package
 

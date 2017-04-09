@@ -582,7 +582,7 @@ function breakfast()
     local variant=$2
     CUSTOM_DEVICES_ONLY="true"
     unset LUNCH_MENU_CHOICES
-    for f in `/bin/ls vendor/pure/vendorsetup.sh 2> /dev/null`
+    for f in `/bin/ls vendor/aquarios/vendorsetup.sh 2> /dev/null`
         do
             echo "including $f"
             . $f
