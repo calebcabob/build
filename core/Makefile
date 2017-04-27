@@ -2284,7 +2284,6 @@ bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(AQUARIOS_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(AQUARIOS_TARGET_PACKAGE) > $(AQUARIOS_TARGET_PACKAGE).md5sum
 	@echo -e ""
-	@echo -e ${CL_BMG}"                    Welcome to the age of AquariOS             "${CL_RST}
 	@echo -e ""
 	@echo -e ""
 	@echo -e ${CL_CYN}"                                   oo                          "${CL_RST}
@@ -2331,7 +2330,7 @@ bacon: otapackage
 	@echo -e ${CL_CYN}"                                ooooooooooo                    "${CL_RST}
 	@echo -e ""
 	@echo -e ""${CL_RST}
-	@echo -e ${CL_BMG}"             Hooray! You haven't FUCKED IT UP...so far.          "${CL_RST}
+	@echo -e ${CL_BMG}"                    Welcome to the age of AquariOS             "${CL_RST}
 	@echo -e ""
 	@echo -e ${CL_CYN}"Package Complete: $(AQUARIOS_TARGET_PACKAGE)"${CL_RST}
 
