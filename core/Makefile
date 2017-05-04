@@ -2065,9 +2065,7 @@ bacon: otapackage
 	@echo -e ""${CL_RST}
 	@echo -e ${CL_BMG}"                    Welcome to the age of AquariOS             "${CL_RST}
 	@echo -e ""
-	@echo -e "NAME:"${CL_CYN} $(CUSTOM_TARGET_PACKAGE)${CL_RST}
-	@echo -e "SIZE:"${CL_CYN}" `ls -lah $(CUSTOM_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
-	@echo -e ""
+	@echo -e ${CL_CYN}"Package Complete: $(AQUARIOS_TARGET_PACKAGE)"${CL_RST}
 
 
 endif    # build_ota_package
