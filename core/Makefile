@@ -1132,7 +1132,7 @@ $(INSTALLED_FILES_FILE): $(FULL_SYSTEMIMAGE_DEPS)
 
 # Generate changelog
 	@echo -e ${CL_GRN}"Generating Changelog"${CL_RST}
-	$(hide) ./vendor/noobbuilds/utils/changelog.sh
+	$(hide) ./vendor/aquarios/utils/changelog.sh
 	$(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/$(TARGET_PRODUCT)-Changelog.txt
 
 	@echo Installed file list: $@
@@ -2014,7 +2014,7 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE)
 	   $(if $(OEM_OTA_CONFIG), -o $(OEM_OTA_CONFIG)) \
 	   $(BUILT_TARGET_FILES_PACKAGE) $@
 
-CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/AquariOS_$(TARGET_PRODUCT)-$(shell date +%Y%m%d-%H%M).zip
+CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/AquariOS-$(TARGET_PRODUCT)-$(AQUARIOS_VERSION)-$(shell date +%Y%m%d-%H%M).zip
 
 .PHONY: otapackage bacon
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
