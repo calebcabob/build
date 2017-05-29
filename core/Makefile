@@ -579,7 +579,7 @@ $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES) $(BOOT_S
 	$(hide) $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_ARGS) $(INTERNAL_MKBOOTIMG_VERSION_ARGS) $(BOARD_MKBOOTIMG_ARGS) --output $@
 	$(BOOT_SIGNER) /boot $@ $(PRODUCTS.$(INTERNAL_PRODUCT).PRODUCT_VERITY_SIGNING_KEY).pk8 $(PRODUCTS.$(INTERNAL_PRODUCT).PRODUCT_VERITY_SIGNING_KEY).x509.pem $@
 	$(hide) $(call assert-max-image-size,$@,$(BOARD_BOOTIMAGE_PARTITION_SIZE))
-	@echo -e ${CL_CYN}"Made boot image: $@"${CL_RST}
+	@echo -e ${CL_BCY}"Made boot image: $@"${CL_RST}
 
 .PHONY: bootimage-nodeps
 bootimage-nodeps: $(MKBOOTIMG) $(BOOT_SIGNER)
@@ -609,14 +609,14 @@ $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES)
 	$(call pretty,"Target boot image: $@")
 	$(hide) $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_ARGS) $(INTERNAL_MKBOOTIMG_VERSION_ARGS) $(BOARD_MKBOOTIMG_ARGS) --output $@
 	$(hide) $(call assert-max-image-size,$@,$(BOARD_BOOTIMAGE_PARTITION_SIZE))
-	@echo -e ${CL_CYN}"Made boot image: $@"${CL_RST}
+	@echo -e ${CL_BCY}"Made boot image: $@"${CL_RST}
 
 .PHONY: bootimage-nodeps
 bootimage-nodeps: $(MKBOOTIMG)
 	@echo "make $@: ignoring dependencies"
 	$(hide) $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_ARGS) $(INTERNAL_MKBOOTIMG_VERSION_ARGS) $(BOARD_MKBOOTIMG_ARGS) --output $(INSTALLED_BOOTIMAGE_TARGET)
 	$(hide) $(call assert-max-image-size,$(INSTALLED_BOOTIMAGE_TARGET),$(BOARD_BOOTIMAGE_PARTITION_SIZE))
-	@echo -e ${CL_CYN}"Made boot image: $@"${CL_RST}
+	@echo -e ${CL_BCY}"Made boot image: $@"${CL_RST}
 
 endif # TARGET_BOOTIMAGE_USE_EXT2
 endif # BOARD_USES_RECOVERY_AS_BOOT
@@ -1000,7 +1000,7 @@ $(RECOVERY_INSTALL_OTA_KEYS): $(OTA_PUBLIC_KEYS) $(DUMPKEY_JAR) $(extra_keys)
 RECOVERYIMAGE_ID_FILE := $(PRODUCT_OUT)/recovery.id
 # $(1): output file
 define build-recoveryimage-target
-  @echo -e ${CL_CYN}"----- Making recovery image ------"${CL_RST}
+  @echo -e ${CL_BCY}"----- Making recovery image ------"${CL_RST}
   $(hide) mkdir -p $(TARGET_RECOVERY_OUT)
   $(hide) mkdir -p $(TARGET_RECOVERY_ROOT_OUT)/etc $(TARGET_RECOVERY_ROOT_OUT)/sdcard $(TARGET_RECOVERY_ROOT_OUT)/tmp
   @echo Copying baseline ramdisk...
@@ -1044,7 +1044,7 @@ define build-recoveryimage-target
   $(if $(filter true,$(BOARD_USES_RECOVERY_AS_BOOT)), \
     $(hide) $(call assert-max-image-size,$(1),$(BOARD_BOOTIMAGE_PARTITION_SIZE)), \
     $(hide) $(call assert-max-image-size,$(1),$(BOARD_RECOVERYIMAGE_PARTITION_SIZE)))
-  @echo -e ${CL_CYN}"Made recovery image: $@"${CL_RST}
+  @echo -e ${CL_BCY}"Made recovery image: $@"${CL_RST}
 endef
 
 ifeq ($(BOARD_USES_RECOVERY_AS_BOOT),true)
@@ -1076,6 +1076,27 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTFS) $(MKBOOTIMG) $(MINIGZIP) \
 		$(recovery_fstab) \
 		$(RECOVERY_INSTALL_OTA_KEYS)
 		$(call build-recoveryimage-target, $@)
+
+# The system partition needs room for the recovery image as well.  We
+# now store the recovery image as a binary patch using the boot image
+# as the source (since they are very similar).  Generate the patch so
+# we can see how big it's going to be, and include that in the system
+# image size check calculation.
+ifneq ($(INSTALLED_RECOVERYIMAGE_TARGET),)
+ifneq ($(BOARD_USES_FULL_RECOVERY_IMAGE),true)
+intermediates := $(call intermediates-dir-for,PACKAGING,recovery_patch)
+RECOVERY_FROM_BOOT_PATCH := $(intermediates)/recovery_from_boot.p
+$(RECOVERY_FROM_BOOT_PATCH): $(INSTALLED_RECOVERYIMAGE_TARGET) \
+                             $(INSTALLED_BOOTIMAGE_TARGET) \
+			     $(HOST_OUT_EXECUTABLES)/imgdiff \
+	                     $(HOST_OUT_EXECUTABLES)/bsdiff
+	@echo -e ${CL_CYN}"Construct recovery from boot"${CL_RST}
+	mkdir -p $(dir $@)
+	PATH=$(HOST_OUT_EXECUTABLES):$$PATH $(HOST_OUT_EXECUTABLES)/imgdiff $(INSTALLED_BOOTIMAGE_TARGET) $(INSTALLED_RECOVERYIMAGE_TARGET) $@
+else # $(BOARD_USES_FULL_RECOVERY_IMAGE) == true
+RECOVERY_FROM_BOOT_PATCH := $(INSTALLED_RECOVERYIMAGE_TARGET)
+endif
+endif
 
 ifdef RECOVERY_RESOURCE_ZIP
 $(RECOVERY_RESOURCE_ZIP): $(INSTALLED_RECOVERYIMAGE_TARGET) | $(ZIPTIME)
@@ -1131,7 +1152,7 @@ INSTALLED_FILES_FILE := $(PRODUCT_OUT)/installed-files.txt
 $(INSTALLED_FILES_FILE): $(FULL_SYSTEMIMAGE_DEPS)
 
 # Generate changelog
-	@echo -e ${CL_GRN}"Generating Changelog"${CL_RST}
+	@echo -e ${CL_BMG}"                       Generating Changelog                       "${CL_RST}
 	$(hide) ./vendor/aquarios/utils/changelog.sh
 	$(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/$(TARGET_PRODUCT)-Changelog.txt
 
@@ -1207,28 +1228,6 @@ $(BUILT_SYSTEMIMAGE): $(FULL_SYSTEMIMAGE_DEPS) $(INSTALLED_FILES_FILE)
 
 INSTALLED_SYSTEMIMAGE := $(PRODUCT_OUT)/system.img
 SYSTEMIMAGE_SOURCE_DIR := $(TARGET_OUT)
-
-# The system partition needs room for the recovery image as well.  We
-# now store the recovery image as a binary patch using the boot image
-# as the source (since they are very similar).  Generate the patch so
-# we can see how big it's going to be, and include that in the system
-# image size check calculation.
-ifneq ($(INSTALLED_RECOVERYIMAGE_TARGET),)
-ifneq ($(BOARD_USES_FULL_RECOVERY_IMAGE),true)
-intermediates := $(call intermediates-dir-for,PACKAGING,recovery_patch)
-RECOVERY_FROM_BOOT_PATCH := $(intermediates)/recovery_from_boot.p
-$(RECOVERY_FROM_BOOT_PATCH): $(INSTALLED_RECOVERYIMAGE_TARGET) \
-                             $(INSTALLED_BOOTIMAGE_TARGET) \
-			     $(HOST_OUT_EXECUTABLES)/imgdiff \
-	                     $(HOST_OUT_EXECUTABLES)/bsdiff
-	@echo -e ${CL_CYN}"Construct recovery from boot"${CL_RST}
-	mkdir -p $(dir $@)
-	PATH=$(HOST_OUT_EXECUTABLES):$$PATH $(HOST_OUT_EXECUTABLES)/imgdiff $(INSTALLED_BOOTIMAGE_TARGET) $(INSTALLED_RECOVERYIMAGE_TARGET) $@
-else # $(BOARD_USES_FULL_RECOVERY_IMAGE) == true
-RECOVERY_FROM_BOOT_PATCH := $(INSTALLED_RECOVERYIMAGE_TARGET)
-endif
-endif
-
 
 $(INSTALLED_SYSTEMIMAGE): $(BUILT_SYSTEMIMAGE) $(RECOVERY_FROM_BOOT_PATCH) | $(ACP)
 	@echo -e ${CL_CYN}"Install system fs image: $@"${CL_RST}
