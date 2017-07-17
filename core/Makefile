@@ -31,6 +31,37 @@ ifneq ($(BUILD_WITH_COLORS),0)
   CL_BCY="\033[1;36m"
 #white
   CL_BWT="\033[1;37m"
+
+# High Intensty
+IBlack="\[\033[0;90m\]"       # Black
+IRed="\[\033[0;91m\]"         # Red
+IGreen="\[\033[0;92m\]"       # Green
+IYellow="\[\033[0;93m\]"      # Yellow
+IBlue="\[\033[0;94m\]"        # Blue
+IPurple="\[\033[0;95m\]"      # Purple
+ICyan="\[\033[0;96m\]"        # Cyan
+IWhite="\[\033[0;97m\]"       # White
+
+# Bold High Intensty
+BIBlack="\[\033[1;90m\]"      # Black
+BIRed="\[\033[1;91m\]"        # Red
+BIGreen="\[\033[1;92m\]"      # Green
+BIYellow="\[\033[1;93m\]"     # Yellow
+BIBlue="\[\033[1;94m\]"       # Blue
+BIPurple="\[\033[1;95m\]"     # Purple
+BICyan="\[\033[1;96m\]"       # Cyan
+BIWhite="\[\033[1;97m\]"      # White
+
+# Underline
+UBlack="\[\033[4;30m\]"       # Black
+URed="\[\033[4;31m\]"         # Red
+UGreen="\[\033[4;32m\]"       # Green
+UYellow="\[\033[4;33m\]"      # Yellow
+UBlue="\[\033[4;34m\]"        # Blue
+UPurple="\[\033[4;35m\]"      # Purple
+UCyan="\[\033[4;36m\]"        # Cyan
+UWhite="\[\033[4;37m\]"       # White
+
 endif
 
 # HACK: clear LOCAL_PATH from including last build target before calling
@@ -2069,7 +2100,7 @@ bacon: otapackage
 	@echo -e ${CL_BCY}"                                ooooooooooo                    "${CL_RST}
 	@echo -e ""
 	@echo -e ""${CL_RST}
-	@echo -e ${CL_INS}"                    Welcome to the age of AquariOS             "${CL_RST}
+	@echo -e ${UPurple}"                    Welcome to the age of AquariOS             "${CL_RST}
 	@echo -e ""
 	@echo -e ${CL_BWT}"Package Complete: $(AQUARIOS_TARGET_PACKAGE)"${CL_RST}
 
