@@ -33,6 +33,36 @@ ifneq ($(BUILD_WITH_COLORS),0)
   CL_BWT="\033[1;37m"
 endif
 
+# High Intensty
+IBlack="\033[0;90m"
+IRed="\033[0;91m"
+IGreen="\033[0;92m"
+IYellow="\033[0;93m"
+IBlue="\033[0;94m"
+IPurple="\033[0;95m"
+ICyan="\033[0;96m"
+IWhite="\033[0;97m"
+
+# Bold High Intensty
+BIBlack="\033[1;90m"
+BIRed="\033[1;91m"
+BIGreen="\033[1;92m"
+BIYellow="\033[1;93m"
+BIBlue="\033[1;94m"
+BIPurple="\033[1;95m"
+BICyan="\033[1;96m"
+BIWhite="\033[1;97m"
+
+# Underline
+UBlack="\033[4;30m"
+URed="\033[4;31m"
+UGreen="\033[4;32m"
+UYellow="\033[4;33m"
+UBlue="\033[4;34m"
+UPurple=033[4;35m"
+UCyan="\033[4;36m"
+UWhite="\033[4;37m"
+
 #Fancy finish logo colors
 eeeeee="\033[38;5;255m"
 e4e4e4="\033[38;5;254m"
