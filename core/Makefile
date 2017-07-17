@@ -2025,53 +2025,53 @@ bacon: otapackage
 	@echo -e ""
 	@echo -e ""
 	@echo -e ""
-	@echo -e ${CL_CYN}"                                   oo                          "${CL_RST}
-	@echo -e ${CL_CYN}"                                oooo                           "${CL_RST}
-	@echo -e ${CL_CYN}"                          oooooooooooo                         "${CL_RST}
-	@echo -e ${CL_CYN}"                          oooooooooooooooooo                   "${CL_RST}
-	@echo -e ${CL_CYN}"                      oooooooooooooooooooooo                   "${CL_RST}
-	@echo -e ${CL_CYN}"                      ooooooooooooooooooooooo                  "${CL_RST}
-	@echo -e ${CL_CYN}"                     oooooooooooooooooooooooo                  "${CL_RST}
-	@echo -e ${CL_CYN}"                   ooooooooooooooooooooooooooo                 "${CL_RST}
-	@echo -e ${CL_CYN}"                      ooooooooooooooooooooooooo                "${CL_RST}
-	@echo -e ${CL_CYN}"                    ooooooooooooooooooooooooooooo              "${CL_RST}
-	@echo -e ${CL_CYN}"                   oooooooooooooooooooooooooooooooo            "${CL_RST}
-	@echo -e ${CL_CYN}"                 oooooooooooooooooo ooooooooooooooooo          "${CL_RST}
-	@echo -e ${CL_CYN}"                 ooooooooooooooooooo  ooo  oooooooooooo        "${CL_RST}
-	@echo -e ${CL_CYN}"                 oooooooooooooooooooooo          ooooo         "${CL_RST}
-	@echo -e ${CL_CYN}"                 ooooooooooooooooooooooooo                     "${CL_RST}
-	@echo -e ${CL_CYN}"                  ooooooooooooooooooooooooooo                  "${CL_RST}
-	@echo -e ${CL_CYN}"                   oooooooooooooooooooooooooooo                "${CL_RST}
-	@echo -e ${CL_CYN}"                    oooooooooooooooooooooooooooo               "${CL_RST}
-	@echo -e ${CL_CYN}"                   o  ooooooooooooooooooooooooooo              "${CL_RST}
-	@echo -e ${CL_CYN}"         oo      oooo   oooooooooooooooooooooooooo             "${CL_RST}
-	@echo -e ${CL_CYN}"          ooooooooooo   oooooooooooooooooooooooooo             "${CL_RST}
-	@echo -e ${CL_CYN}"           ooooooooooooooooooooooooooooooooooooooo             "${CL_RST}
-	@echo -e ${CL_CYN}"           oooooooooooooooooooooooooooooooooooooo              "${CL_RST}
-	@echo -e ${CL_CYN}"       ooooooooooooooooooooooooooooooooooooooooo               "${CL_RST}
-	@echo -e ${CL_CYN}"           oooooooooooooooooooooooooooooooooooo                "${CL_RST}
-	@echo -e ${CL_CYN}"          ooooooooooooooooooooooooooooooooooo                  "${CL_RST}
-	@echo -e ${CL_CYN}"       ooooooooooooooooooooooooooooooooooo                     "${CL_RST}
-	@echo -e ${CL_CYN}"            ooooooooooooooooooooooooooo                        "${CL_RST}
-	@echo -e ${CL_CYN}"          oooooooooooooooooooooooooo                           "${CL_RST}
-	@echo -e ${CL_CYN}"                 ooooooooooooooo                               "${CL_RST}
-	@echo -e ${CL_CYN}"                ooooooooooooooo                                "${CL_RST}
-	@echo -e ${CL_CYN}"                oooooooooooooo                                 "${CL_RST}
-	@echo -e ${CL_CYN}"                oooooooooooooo         ooooooooo               "${CL_RST}
-	@echo -e ${CL_CYN}"                oooooooooooooo       ooooooooooooo             "${CL_RST}
-	@echo -e ${CL_CYN}"                ooooooooooooooo     ooooo  ooooooo             "${CL_RST}
-	@echo -e ${CL_CYN}"                 oooooooooooooo     ooo      oooooo            "${CL_RST}
-	@echo -e ${CL_CYN}"                  oooooooooooooo    oo       oooooo            "${CL_RST}
-	@echo -e ${CL_CYN}"                    ooooooooooooooo  o     ooooooo             "${CL_RST}
-	@echo -e ${CL_CYN}"                     oooooooooooooooooooooooooooo              "${CL_RST}
-	@echo -e ${CL_CYN}"                        oooooooooooooooooooooooo               "${CL_RST}
-	@echo -e ${CL_CYN}"                           oooooooooooooooooooo                "${CL_RST}
-	@echo -e ${CL_CYN}"                                ooooooooooo                    "${CL_RST}
+	@echo -e ${CL_BCY}"                                   oo                          "${CL_RST}
+	@echo -e ${CL_BCY}"                                oooo                           "${CL_RST}
+	@echo -e ${CL_BCY}"                          oooooooooooo                         "${CL_RST}
+	@echo -e ${CL_BCY}"                          oooooooooooooooooo                   "${CL_RST}
+	@echo -e ${CL_BCY}"                      oooooooooooooooooooooo                   "${CL_RST}
+	@echo -e ${CL_BCY}"                      ooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${CL_BCY}"                     oooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${CL_BCY}"                   ooooooooooooooooooooooooooo                 "${CL_RST}
+	@echo -e ${CL_BCY}"                      ooooooooooooooooooooooooo                "${CL_RST}
+	@echo -e ${CL_BCY}"                    ooooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${CL_BCY}"                   oooooooooooooooooooooooooooooooo            "${CL_RST}
+	@echo -e ${CL_BCY}"                 oooooooooooooooooo ooooooooooooooooo          "${CL_RST}
+	@echo -e ${CL_BCY}"                 ooooooooooooooooooo  ooo  oooooooooooo        "${CL_RST}
+	@echo -e ${CL_BCY}"                 oooooooooooooooooooooo          ooooo         "${CL_RST}
+	@echo -e ${CL_BCY}"                 ooooooooooooooooooooooooo                     "${CL_RST}
+	@echo -e ${CL_BCY}"                  ooooooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${CL_BCY}"                   oooooooooooooooooooooooooooo                "${CL_RST}
+	@echo -e ${CL_BCY}"                    oooooooooooooooooooooooooooo               "${CL_RST}
+	@echo -e ${CL_BCY}"                   o  ooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${CL_BCY}"         oo      oooo   oooooooooooooooooooooooooo             "${CL_RST}
+	@echo -e ${CL_BCY}"          ooooooooooo   oooooooooooooooooooooooooo             "${CL_RST}
+	@echo -e ${CL_BCY}"           ooooooooooooooooooooooooooooooooooooooo             "${CL_RST}
+	@echo -e ${CL_BCY}"           oooooooooooooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${CL_BCY}"       ooooooooooooooooooooooooooooooooooooooooo               "${CL_RST}
+	@echo -e ${CL_BCY}"           oooooooooooooooooooooooooooooooooooo                "${CL_RST}
+	@echo -e ${CL_BCY}"          ooooooooooooooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${CL_BCY}"       ooooooooooooooooooooooooooooooooooo                     "${CL_RST}
+	@echo -e ${CL_BCY}"            ooooooooooooooooooooooooooo                        "${CL_RST}
+	@echo -e ${CL_BCY}"          oooooooooooooooooooooooooo                           "${CL_RST}
+	@echo -e ${CL_BCY}"                 ooooooooooooooo                               "${CL_RST}
+	@echo -e ${CL_BCY}"                ooooooooooooooo                                "${CL_RST}
+	@echo -e ${CL_BCY}"                oooooooooooooo                                 "${CL_RST}
+	@echo -e ${CL_BCY}"                oooooooooooooo         ooooooooo               "${CL_RST}
+	@echo -e ${CL_BCY}"                oooooooooooooo       ooooooooooooo             "${CL_RST}
+	@echo -e ${CL_BCY}"                ooooooooooooooo     ooooo  ooooooo             "${CL_RST}
+	@echo -e ${CL_BCY}"                 oooooooooooooo     ooo      oooooo            "${CL_RST}
+	@echo -e ${CL_BCY}"                  oooooooooooooo    oo       oooooo            "${CL_RST}
+	@echo -e ${CL_BCY}"                    ooooooooooooooo  o     ooooooo             "${CL_RST}
+	@echo -e ${CL_BCY}"                     oooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${CL_BCY}"                        oooooooooooooooooooooooo               "${CL_RST}
+	@echo -e ${CL_BCY}"                           oooooooooooooooooooo                "${CL_RST}
+	@echo -e ${CL_BCY}"                                ooooooooooo                    "${CL_RST}
 	@echo -e ""
 	@echo -e ""${CL_RST}
-	@echo -e ${CL_BMG}"                    Welcome to the age of AquariOS             "${CL_RST}
+	@echo -e ${CL_INS}"                    Welcome to the age of AquariOS             "${CL_RST}
 	@echo -e ""
-	@echo -e ${CL_CYN}"Package Complete: $(AQUARIOS_TARGET_PACKAGE)"${CL_RST}
+	@echo -e ${CL_BWT}"Package Complete: $(AQUARIOS_TARGET_PACKAGE)"${CL_RST}
 
 
 endif    # build_ota_package
