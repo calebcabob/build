@@ -1200,7 +1200,7 @@ INSTALLED_FILES_FILE := $(PRODUCT_OUT)/installed-files.txt
 $(INSTALLED_FILES_FILE): $(FULL_SYSTEMIMAGE_DEPS)
 
 # Generate changelog
-	@echo -e ${CL_BMG}"                       Generating Changelog                       "${CL_RST}
+	@echo -e ${CL_BMG}"			      Generating Changelog"${CL_RST}
 	$(hide) ./vendor/aquarios/utils/changelog.sh
 	$(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/$(TARGET_PRODUCT)-Changelog.txt
 
@@ -2072,51 +2072,51 @@ bacon: otapackage
 	@echo -e ""
 	@echo -e ""
 	@echo -e ""
-	@echo -e ${5fffff}"                                   oo                          "${CL_RST}
-	@echo -e ${5fffff}"                                oooo                           "${CL_RST}
-	@echo -e ${5fffff}"                          oooooooooooo                         "${CL_RST}
-	@echo -e ${5fffff}"                          oooooooooooooooooo                   "${CL_RST}
-	@echo -e ${5fffff}"                      oooooooooooooooooooooo                   "${CL_RST}
-	@echo -e ${5fffff}"                      ooooooooooooooooooooooo                  "${CL_RST}
-	@echo -e ${5fffd7}"                     oooooooooooooooooooooooo                  "${CL_RST}
-	@echo -e ${5fffd7}"                   ooooooooooooooooooooooooooo                 "${CL_RST}
-	@echo -e ${5fffd7}"                      ooooooooooooooooooooooooo                "${CL_RST}
-	@echo -e ${5fffd7}"                    ooooooooooooooooooooooooooooo              "${CL_RST}
-	@echo -e ${00d7d7}"                   oooooooooooooooooooooooooooooooo            "${CL_RST}
-	@echo -e ${00d7d7}"                 oooooooooooooooooo ooooooooooooooooo          "${CL_RST}
-	@echo -e ${00d7d7}"                 ooooooooooooooooooo  ooo  oooooooooooo        "${CL_RST}
-	@echo -e ${00d7d7}"                 oooooooooooooooooooooo          ooooo         "${CL_RST}
-	@echo -e ${00d7d7}"                 ooooooooooooooooooooooooo                     "${CL_RST}
-	@echo -e ${00d7d7}"                  ooooooooooooooooooooooooooo                  "${CL_RST}
-	@echo -e ${00d7d7}"                   oooooooooooooooooooooooooooo                "${CL_RST}
-	@echo -e ${00d7d7}"                    oooooooooooooooooooooooooooo               "${CL_RST}
-	@echo -e ${5fd7d7}"                   o  ooooooooooooooooooooooooooo              "${CL_RST}
-	@echo -e ${5fd7d7}"         oo      oooo   oooooooooooooooooooooooooo             "${CL_RST}
-	@echo -e ${5fd7d7}"          ooooooooooo   oooooooooooooooooooooooooo             "${CL_RST}
-	@echo -e ${5fd7d7}"           ooooooooooooooooooooooooooooooooooooooo             "${CL_RST}
-	@echo -e ${5fd7d7}"           oooooooooooooooooooooooooooooooooooooo              "${CL_RST}
-	@echo -e ${5fafaf}"       ooooooooooooooooooooooooooooooooooooooooo               "${CL_RST}
-	@echo -e ${5fafaf}"           oooooooooooooooooooooooooooooooooooo                "${CL_RST}
-	@echo -e ${5fafaf}"          ooooooooooooooooooooooooooooooooooo                  "${CL_RST}
-	@echo -e ${5fafaf}"       ooooooooooooooooooooooooooooooooooo                     "${CL_RST}
-	@echo -e ${5f87af}"            ooooooooooooooooooooooooooo                        "${CL_RST}
-	@echo -e ${5f87af}"          oooooooooooooooooooooooooo                           "${CL_RST}
-	@echo -e ${5f87af}"                 ooooooooooooooo                               "${CL_RST}
-	@echo -e ${5f87af}"                ooooooooooooooo                                "${CL_RST}
-	@echo -e ${5f87af}"                oooooooooooooo                                 "${CL_RST}
-	@echo -e ${0087af}"                oooooooooooooo         ooooooooo               "${CL_RST}
-	@echo -e ${0087af}"                oooooooooooooo       ooooooooooooo             "${CL_RST}
-	@echo -e ${0087af}"                ooooooooooooooo     ooooo  ooooooo             "${CL_RST}
-	@echo -e ${0087af}"                 oooooooooooooo     ooo      oooooo            "${CL_RST}
-	@echo -e ${0087af}"                  oooooooooooooo    oo       oooooo            "${CL_RST}
-	@echo -e ${0087af}"                    ooooooooooooooo  o     ooooooo             "${CL_RST}
-	@echo -e ${0087af}"                     oooooooooooooooooooooooooooo              "${CL_RST}
-	@echo -e ${005f87}"                        oooooooooooooooooooooooo               "${CL_RST}
-	@echo -e ${005f87}"                           oooooooooooooooooooo                "${CL_RST}
-	@echo -e ${005f87}"                                ooooooooooo                    "${CL_RST}
+	@echo -e ${5fffff}"	                                   oo                          "${CL_RST}
+	@echo -e ${5fffff}"	                                oooo                           "${CL_RST}
+	@echo -e ${5fffff}"	                          oooooooooooo                         "${CL_RST}
+	@echo -e ${5fffff}"	                          oooooooooooooooooo                   "${CL_RST}
+	@echo -e ${5fffff}"	                      oooooooooooooooooooooo                   "${CL_RST}
+	@echo -e ${5fffff}"	                      ooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${5fffd7}"	                     oooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${5fffd7}"	                   ooooooooooooooooooooooooooo                 "${CL_RST}
+	@echo -e ${5fffd7}"	                      ooooooooooooooooooooooooo                "${CL_RST}
+	@echo -e ${5fffd7}"	                    ooooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${00d7d7}"	                   oooooooooooooooooooooooooooooooo            "${CL_RST}
+	@echo -e ${00d7d7}"	                 oooooooooooooooooo ooooooooooooooooo          "${CL_RST}
+	@echo -e ${00d7d7}"	                 ooooooooooooooooooo  ooo  oooooooooooo        "${CL_RST}
+	@echo -e ${00d7d7}"	                 oooooooooooooooooooooo          ooooo         "${CL_RST}
+	@echo -e ${00d7d7}"	                 ooooooooooooooooooooooooo                     "${CL_RST}
+	@echo -e ${00d7d7}"	                  ooooooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${00d7d7}"	                   oooooooooooooooooooooooooooo                "${CL_RST}
+	@echo -e ${00d7d7}"	                    oooooooooooooooooooooooooooo               "${CL_RST}
+	@echo -e ${5fd7d7}"	                   o  ooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${5fd7d7}"	         oo      oooo   oooooooooooooooooooooooooo             "${CL_RST}
+	@echo -e ${5fd7d7}"	          ooooooooooo   oooooooooooooooooooooooooo             "${CL_RST}
+	@echo -e ${5fd7d7}"	           ooooooooooooooooooooooooooooooooooooooo             "${CL_RST}
+	@echo -e ${5fd7d7}"	           oooooooooooooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${5fafaf}"	       ooooooooooooooooooooooooooooooooooooooooo               "${CL_RST}
+	@echo -e ${5fafaf}"	           oooooooooooooooooooooooooooooooooooo                "${CL_RST}
+	@echo -e ${5fafaf}"	          ooooooooooooooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${5fafaf}"	       ooooooooooooooooooooooooooooooooooo                     "${CL_RST}
+	@echo -e ${5f87af}"	            ooooooooooooooooooooooooooo                        "${CL_RST}
+	@echo -e ${5f87af}"	          oooooooooooooooooooooooooo                           "${CL_RST}
+	@echo -e ${5f87af}"	                 ooooooooooooooo                               "${CL_RST}
+	@echo -e ${5f87af}"	                ooooooooooooooo                                "${CL_RST}
+	@echo -e ${5f87af}"	                oooooooooooooo                                 "${CL_RST}
+	@echo -e ${0087af}"	                oooooooooooooo         ooooooooo               "${CL_RST}
+	@echo -e ${0087af}"	                oooooooooooooo       ooooooooooooo             "${CL_RST}
+	@echo -e ${0087af}"	                ooooooooooooooo     ooooo  ooooooo             "${CL_RST}
+	@echo -e ${0087af}"	                 oooooooooooooo     ooo      oooooo            "${CL_RST}
+	@echo -e ${0087af}"	                  oooooooooooooo    oo       oooooo            "${CL_RST}
+	@echo -e ${0087af}"	                    ooooooooooooooo  o     ooooooo             "${CL_RST}
+	@echo -e ${0087af}"	                     oooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${005f87}"	                        oooooooooooooooooooooooo               "${CL_RST}
+	@echo -e ${005f87}"	                           oooooooooooooooooooo                "${CL_RST}
+	@echo -e ${005f87}"	                                ooooooooooo                    "${CL_RST}
 	@echo -e ""
 	@echo -e ""${CL_RST}
-	@echo -e ${ff875f}"		Welcome to the age of AquariOS"${CL_RST}
+	@echo -e ${ff875f}"			  Welcome to the age of AquariOS"${CL_RST}
 	@echo -e ""
 	@echo -e ${CL_BWT}"Package Complete: $(AQUARIOS_TARGET_PACKAGE)"${CL_RST}
 
