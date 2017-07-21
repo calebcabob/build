@@ -31,6 +31,23 @@ ifneq ($(BUILD_WITH_COLORS),0)
   CL_BWT="\033[1;37m"
 endif
 
+
+#Fancy finish logo colors
+eeeeee="\033[38;5;255m"
+e4e4e4="\033[38;5;254m"
+dadada="\033[38;5;253m"
+d0d0d0="\033[38;5;252m"
+ff875f="\033[38;5;208m"
+005f87="\033[38;5;24m"
+0087af="\033[38;5;31m"
+5f87af="\033[38;5;67m"
+5fafaf="\033[38;5;73m"
+5fd7d7="\033[38;5;80m"
+00d7d7="\033[38;5;44m"
+5fffd7="\033[38;5;86m"
+5fffff="\033[38;5;87m"
+87ffd7="\033[38;5;122m"
+
 # HACK: clear LOCAL_PATH from including last build target before calling
 # intermedites-dir-for
 LOCAL_PATH := $(BUILD_SYSTEM)
