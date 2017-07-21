@@ -47,6 +47,7 @@ ff875f="\033[38;5;208m"
 5fffd7="\033[38;5;86m"
 5fffff="\033[38;5;87m"
 87ffd7="\033[38;5;122m"
+00d7ff="\033[38;5;45m"
 
 # HACK: clear LOCAL_PATH from including last build target before calling
 # intermedites-dir-for
@@ -1315,7 +1316,9 @@ INSTALLED_FILES_FILE := $(PRODUCT_OUT)/installed-files.txt
 $(INSTALLED_FILES_FILE): $(FULL_SYSTEMIMAGE_DEPS)
 
 # Generate changelog
-	@echo -e ${CL_GRN}"Generating Changelog"${CL_RST}
+	@echo -e ${00ffd7}" "${CL_RST}
+	@echo -e ${00d7ff}"     🐙 🐟 🐠 🐬 🐡 🐙 🐳 ~ GENERATING CHANGELOG ~ 🐳 🐙 🐡 🐬 🐠 🐟 🐙"${CL_RST}
+	@echo -e ${00ffd7}" "${CL_RST}
 	$(hide) ./vendor/aquarios/utils/changelog.sh
 	$(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/$(TARGET_PRODUCT)-Changelog.txt
 
