@@ -749,6 +749,8 @@ def WriteFullOTAPackage(input_zip, output_file):
 
   target_info.WriteDeviceAssertions(script, OPTIONS.oem_no_mount)
   device_specific.FullOTA_Assertions()
+#  AppendAssertions(script, OPTIONS.info_dict, oem_dicts)
+#  device_specific.FullOTA_Assertions()
 
   # Two-step package strategy (in chronological order, which is *not*
   # the order in which the generated script has things):
