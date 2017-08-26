@@ -196,6 +196,7 @@ else
     all_product_configs := $(get-all-product-makefiles)
   endif
   endif
+  endif
 
 ifeq ($(CUSTOM_BUILD),)
 # Find the product config makefile for the current product.
