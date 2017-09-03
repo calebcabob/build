@@ -2591,7 +2591,7 @@ bacon: otapackage
 	@echo -e ${ff875f}"			  Welcome to the age of AquariOS"${CL_RST}
 	@echo -e ""
 	@echo -e ${CL_BWT}"Package Complete: $(AQUARIOS_TARGET_PACKAGE)"${CL_RST}
-
+	@echo -e "SIZE:"${CL_CYN}" `ls -la --si $(AQUARIOS_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
 endif    # build_ota_package
 
 # -----------------------------------------------------------------
