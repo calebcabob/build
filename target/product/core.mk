@@ -21,7 +21,6 @@
 # core_tiny.mk in addition to core_minimal.mk.
 
 PRODUCT_PACKAGES += \
-    BasicDreams \
     BlockedNumberProvider \
     BookmarkProvider \
     BuiltInPrintService \
@@ -29,7 +28,6 @@ PRODUCT_PACKAGES += \
     CaptivePortalLogin \
     CertInstaller \
     Contacts \
-    DeskClock \
     DocumentsUI \
     DownloadProviderUi \
     ExactCalculator \
