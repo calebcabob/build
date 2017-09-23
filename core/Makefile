@@ -1,5 +1,23 @@
 # Put some miscellaneous rules here
 
+#Fancy finish logo colors
+eeeeee="\033[38;5;255m"
+e4e4e4="\033[38;5;254m"
+dadada="\033[38;5;253m"
+d0d0d0="\033[38;5;252m"
+ff875f="\033[38;5;208m"
+005f87="\033[38;5;24m"
+0087af="\033[38;5;31m"
+5f87af="\033[38;5;67m"
+5fafaf="\033[38;5;73m"
+5fd7d7="\033[38;5;80m"
+00d7d7="\033[38;5;44m"
+5fffd7="\033[38;5;86m"
+5fffff="\033[38;5;87m"
+87ffd7="\033[38;5;122m"
+00d7ff="\033[38;5;45m"
+
+
 # HACK: clear LOCAL_PATH from including last build target before calling
 # intermedites-dir-for
 LOCAL_PATH := $(BUILD_SYSTEM)
@@ -2634,14 +2652,65 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) \
 	   $(if $(OEM_OTA_CONFIG), -o $(OEM_OTA_CONFIG)) \
 	   $(BUILT_TARGET_FILES_PACKAGE) $@
 
-CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/AquariOS_$(TARGET_PRODUCT)-$(AQUARIOS_VERSION).zip
+AQUARIOS_TARGET_PACKAGE := $(PRODUCT_OUT)/AquariOS_$(TARGET_PRODUCT)-$(AQUARIOS_VERSION).zip
 
 .PHONY: otapackage bacon
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CUSTOM_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(CUSTOM_TARGET_PACKAGE) > $(CUSTOM_TARGET_PACKAGE).md5sum
-	@echo -e "Package complete: $(CUSTOM_TARGET_PACKAGE)"
+	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(AQUARIOS_TARGET_PACKAGE)
+	$(hide) $(MD5SUM) $(CUSTOM_TARGET_PACKAGE) > $(AQUARIOS_TARGET_PACKAGE).md5sum
+
+	@echo -e ""
+	@echo -e ""
+	@echo -e ""
+	@echo -e ${5fffff}"	                                   oo                          "${CL_RST}
+	@echo -e ${5fffff}"	                                oooo                           "${CL_RST}
+	@echo -e ${5fffff}"	                          oooooooooooo                         "${CL_RST}
+	@echo -e ${5fffff}"	                          oooooooooooooooooo                   "${CL_RST}
+	@echo -e ${5fffff}"	                      oooooooooooooooooooooo                   "${CL_RST}
+	@echo -e ${5fffff}"	                      ooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${5fffd7}"	                     oooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${5fffd7}"	                   ooooooooooooooooooooooooooo                 "${CL_RST}
+	@echo -e ${5fffd7}"	                      ooooooooooooooooooooooooo                "${CL_RST}
+	@echo -e ${5fffd7}"	                    ooooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${00d7d7}"	                   oooooooooooooooooooooooooooooooo            "${CL_RST}
+	@echo -e ${00d7d7}"	                 oooooooooooooooooo ooooooooooooooooo          "${CL_RST}
+	@echo -e ${00d7d7}"	                 ooooooooooooooooooo  ooo  oooooooooooo        "${CL_RST}
+	@echo -e ${00d7d7}"	                 oooooooooooooooooooooo          ooooo         "${CL_RST}
+	@echo -e ${00d7d7}"	                 ooooooooooooooooooooooooo                     "${CL_RST}
+	@echo -e ${00d7d7}"	                  ooooooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${00d7d7}"	                   oooooooooooooooooooooooooooo                "${CL_RST}
+	@echo -e ${00d7d7}"	                    oooooooooooooooooooooooooooo               "${CL_RST}
+	@echo -e ${5fd7d7}"	                   o  ooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${5fd7d7}"	         oo      oooo   oooooooooooooooooooooooooo             "${CL_RST}
+	@echo -e ${5fd7d7}"	          ooooooooooo   oooooooooooooooooooooooooo             "${CL_RST}
+	@echo -e ${5fd7d7}"	           ooooooooooooooooooooooooooooooooooooooo             "${CL_RST}
+	@echo -e ${5fd7d7}"	           oooooooooooooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${5fafaf}"	       ooooooooooooooooooooooooooooooooooooooooo               "${CL_RST}
+	@echo -e ${5fafaf}"	           oooooooooooooooooooooooooooooooooooo                "${CL_RST}
+	@echo -e ${5fafaf}"	          ooooooooooooooooooooooooooooooooooo                  "${CL_RST}
+	@echo -e ${5fafaf}"	       ooooooooooooooooooooooooooooooooooo                     "${CL_RST}
+	@echo -e ${5f87af}"	            ooooooooooooooooooooooooooo                        "${CL_RST}
+	@echo -e ${5f87af}"	          oooooooooooooooooooooooooo                           "${CL_RST}
+	@echo -e ${5f87af}"	                 ooooooooooooooo                               "${CL_RST}
+	@echo -e ${5f87af}"	                ooooooooooooooo                                "${CL_RST}
+	@echo -e ${5f87af}"	                oooooooooooooo                                 "${CL_RST}
+	@echo -e ${0087af}"	                oooooooooooooo         ooooooooo               "${CL_RST}
+	@echo -e ${0087af}"	                oooooooooooooo       ooooooooooooo             "${CL_RST}
+	@echo -e ${0087af}"	                ooooooooooooooo     ooooo  ooooooo             "${CL_RST}
+	@echo -e ${0087af}"	                 oooooooooooooo     ooo      oooooo            "${CL_RST}
+	@echo -e ${0087af}"	                  oooooooooooooo    oo       oooooo            "${CL_RST}
+	@echo -e ${0087af}"	                    ooooooooooooooo  o     ooooooo             "${CL_RST}
+	@echo -e ${0087af}"	                     oooooooooooooooooooooooooooo              "${CL_RST}
+	@echo -e ${005f87}"	                        oooooooooooooooooooooooo               "${CL_RST}
+	@echo -e ${005f87}"	                           oooooooooooooooooooo                "${CL_RST}
+	@echo -e ${005f87}"	                                ooooooooooo                    "${CL_RST}
+	@echo -e " "
+	@echo -e " "${CL_RST}
+	@echo -e ${ff875f}"			  Welcome to the age of AquariOS"${CL_RST}
+	@echo -e " "
+	@echo -e ${CL_BWT}"Package Complete: $(AQUARIOS_TARGET_PACKAGE)"${CL_RST}
+	@echo -e "SIZE:"${CL_CYN}" `ls -la --si $(AQUARIOS_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
 
 endif    # build_ota_package
 
