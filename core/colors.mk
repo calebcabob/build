@@ -49,7 +49,6 @@ CLR_RST=$(shell tput sgr0)
   CL_BCY="\033[1;36m"
 #white
   CL_BWT="\033[1;37m"
-endif
 
 # High Intensty
 IBlack="\033[0;90m"
