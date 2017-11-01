@@ -23,6 +23,10 @@ PRODUCT_PACKAGES := \
     libfwdlockengine \
     WAPPushManager
 
+# Additional settings used in all AOSP builds
+PRODUCT_PROPERTY_OVERRIDES := \
+    ro.config.ringtone=Lollipop.ogg
+
 # Put en_US first in the list, so make it default.
 PRODUCT_LOCALES := en_US
 
