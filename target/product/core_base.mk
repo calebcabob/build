@@ -18,6 +18,7 @@
 
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.config.notification_sound=Knock.ogg \
+    ro.config.ringtone=Lollipop.ogg \
     ro.config.alarm_alert=Sunshower.ogg
 
 PRODUCT_PACKAGES += \
