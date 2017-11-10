@@ -498,18 +498,20 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   system_progress = 0.75
 
-  script.Print("**************************************************");
-  script.Print(" ____    ________   _____   ____    ____          ");
-  script.Print("/\\  _`\\ /\\_____  \\ /\\  __`\\/\\  _`\\ /\\  _`\\         ");
-  script.Print("\\ \\ \\L\\_\\/____//'/'\\ \\ \\/\\ \\ \\,\\L\\_\\ \\ \\L\\\\");
-  script.Print(" \\ \\ \\L_L    //'/'  \\ \\ \\ \\ \\/_\\__ \\ \\ ,__/       ");
-  script.Print("  \\ \\ \\/, \\ //'/'___ \\ \\ \\_\\ \\/\\ \\L\\ \\ \\ \\/   ");
-  script.Print("   \\ \\____/ /\\_______\\\\ \\_____\\ `\\____\\ \\_\\       ");
-  script.Print("    \\/___/  \\/_______/ \\/_____/\\/_____/\\/_/   ");
-  script.Print("                                                   ");
-  script.Print("                  AOSP Oreo                        ");
-  script.Print("          A Ground Zero Roms Project               ");
-  script.Print("***************************************************");
+  script.Print("")
+  script.Print("               Dive Deep Into...             ")
+  script.Print(" .--.                          _  .--.  .--. ")
+  script.Print(": .; :                        :_;: ,. :: .--'")
+  script.Print(":    : .---..-..-. .--.  .--. .-.: :: :`. `. ")
+  script.Print(": :: :' .; :: :; :' .; ; : ..': :: :; : _`, :")
+  script.Print(":_;:_;`._. ;`.__.'`.__,_;:_;  :_;`.__.'`.__.'")
+  script.Print("         : :                                 ")
+  script.Print("         :_:                                 ")
+  script.Print("_,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.,_")
+  script.Print(".-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.")
+  script.Print("_,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.,_")
+  script.Print(".,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.,__,.-'~'-.")
+  script.Print("")
 
   if OPTIONS.wipe_user_data:
     system_progress -= 0.1
