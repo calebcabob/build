@@ -1401,6 +1401,12 @@ $(RECOVERY_INSTALL_OTA_KEYS): $(OTA_PUBLIC_KEYS) $(DUMPKEY_JAR) $(extra_keys)
 RECOVERYIMAGE_ID_FILE := $(PRODUCT_OUT)/recovery.id
 
 define build-recoveryramdisk
+  # Changelog
+  $(hide) ./vendor/aquarios/tools/changelog.sh
+  $(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/$(AQUARIOS_VERSION).txt
+  @echo -e ${00ffd7}" "${CL_RST}
+  @echo -e ${00d7ff}"     🐙 🐟 🐠 🐬 🐡 🐙 🐳 ~ GENERATING CHANGELOG ~ 🐳 🐙 🐡 🐬 🐠 🐟 🐙"${CL_RST}
+  @echo -e ${00ffd7}" "${CL_RST}
   $(hide) mkdir -p $(TARGET_RECOVERY_OUT)
   $(hide) mkdir -p $(TARGET_RECOVERY_ROOT_OUT)/etc $(TARGET_RECOVERY_ROOT_OUT)/sdcard $(TARGET_RECOVERY_ROOT_OUT)/tmp
   # Copying baseline ramdisk...
@@ -1634,6 +1640,8 @@ endif
 
 # $(1): output file
 define build-systemimage-target
+  $(hide) ./vendor/aquarios/tools/changelog.sh
+  $(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/$(AQUARIOS_VERSION).txt
   @echo "Target system fs image: $(1)"
   $(call create-system-vendor-symlink)
   $(call create-system-product-symlink)
